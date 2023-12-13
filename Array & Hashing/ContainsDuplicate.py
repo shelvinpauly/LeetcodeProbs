@@ -4,9 +4,10 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        for i in range(len(nums)):
-            for j in range(i + 1 ,len(nums)) :
-                if nums[i] == nums[j]:
-                    return True
+    
+        while len(nums) != 0:
+            num = nums.pop()
+            if num in nums:
+                return True
 
         return False
