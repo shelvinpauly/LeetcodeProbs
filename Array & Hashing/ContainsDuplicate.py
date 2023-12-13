@@ -4,10 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-    
-        while len(nums) != 0:
-            num = nums.pop()
-            if num in nums:
+        nums = sorted(nums)
+        for i in range(nums):
+            if nums[i] == nums[i+1]:
                 return True
 
         return False
