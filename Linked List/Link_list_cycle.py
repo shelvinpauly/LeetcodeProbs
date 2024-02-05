@@ -38,3 +38,26 @@
  
 
 # Follow up: Can you solve it using O(1) (i.e. constant) memory?
+
+class ListNode:
+    def __init__(self, val = 0, next = None):
+        self.val = val
+        self.next = next
+# class Solution:
+#     def hasCycle(self, head: Optional[ListNode]) -> bool:
+#         NodeSet = set()
+#         while head:
+#             if head in NodeSet:
+#                 return True
+#             NodeSet.add(head)
+#             head = head.next
+#         return False
+class Soltuion:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        slow, fast = head, head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                return True
+        return False
